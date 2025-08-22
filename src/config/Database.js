@@ -6,7 +6,10 @@ class Database {
   constructor() {
     this.sequelize = new Sequelize(
       "postgresql://neondb_owner:npg_koU6DzcA9XWl@ep-small-cell-aduqhtrl-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
-    );
+    , {
+      dialect: "postgres",
+      dialectModule: pg
+    });
   }
 
   async startdb() {
