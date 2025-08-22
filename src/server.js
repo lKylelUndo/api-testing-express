@@ -1,7 +1,6 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import serverless from "serverless-http";
 
 import routes from "./routes/index.routes.js";
 import { verifyToken } from "./middlewares/verifyToken.js";
@@ -38,4 +37,15 @@ app.get("/", (req, res) => {
 //   console.log(`🚀 Server running at http://localhost:${PORT}`);
 // });
 
-export default app;
+const startServer = () => {
+  try {
+    db.startdb()
+    app.listen(PORT, () => {
+      console.log(`Server listening on 5000 http://localhost:${PORT}`);
+    });
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+startServer();
