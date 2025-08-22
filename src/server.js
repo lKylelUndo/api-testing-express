@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
   return res.json("Hello Testff");
 });
 
-// const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 // app.listen(PORT, () => {
 //   console.log(`🚀 Server running at http://localhost:${PORT}`);
 // });
