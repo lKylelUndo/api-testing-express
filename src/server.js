@@ -1,9 +1,11 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import serverless from "serverless-http";
 
 import routes from "./routes/index.routes.js";
 import { verifyToken } from "./middlewares/verifyToken.js";
+import db from "./config/Database.js";
 
 const corsOption = {
   origin: "https://jlabs-developer-internship-assessment-web.vercel.app",
@@ -31,7 +33,9 @@ app.get("/", (req, res) => {
   return res.json("Hello Testff");
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//   console.log(`🚀 Server running at http://localhost:${PORT}`);
+// });
+
+export default app;

@@ -9,13 +9,11 @@ class Database {
     );
   }
 
-  async testdb() {
+  async startdb() {
     try {
       await this.sequelize.authenticate();
     } catch (error) {
       console.log(error);
-    } finally {
-      await this.sequelize.close();
     }
   }
 
